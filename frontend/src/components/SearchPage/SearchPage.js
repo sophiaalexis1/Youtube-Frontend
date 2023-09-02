@@ -38,7 +38,6 @@ function SearchPage() {
   
     return (
         <div>
-          <h1>YouTube Video Search</h1>
           <div>
             <input
               type="text"
@@ -46,6 +45,8 @@ function SearchPage() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
+            <br />
+            <br />
             <button onClick={handleSearch}>Search</button>
           </div>
           <div className="video-container">
