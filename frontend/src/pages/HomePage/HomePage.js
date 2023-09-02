@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
-import YouTubeVideo from "../../components/VideoPlayer/VideoPlayer";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
 import axios from "axios";
 
@@ -32,7 +32,7 @@ const HomePage = () => {
     <div className="container">
       <h1>Welcome {user.username}!</h1>
       <Link to="/addcar">Add Car!</Link>
-      <YouTubeVideo videoId="ModbgkYi9Fg"/>
+      <VideoPlayer videoId="ModbgkYi9Fg"/>
       {cars &&
         cars.map((car) => (
           <p key={car.id}>
