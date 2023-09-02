@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
-
 import axios from "axios";
+import SearchPage from "../../components/SearchPage/SearchPage";
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -31,6 +31,7 @@ const HomePage = () => {
   return (
     <div className="container">
       <h1>Welcome {user.username}!</h1>
+      <SearchPage />
       <Link to="/addcar">Add Car!</Link>
       <VideoPlayer videoId="ModbgkYi9Fg"/>
       {cars &&
