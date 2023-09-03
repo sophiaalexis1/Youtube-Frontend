@@ -5,10 +5,12 @@ import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import axios from "axios";
 import SearchPage from "../../components/SearchPage/SearchPage";
 import "./HomePage.css"
+import RelatedVideos from "../../components/RelatedVideos/RelatedVideos.js"
 
 const HomePage = () => {
   const [user, token] = useAuth();
   const [cars, setCars] = useState([]);
+  const selectedVideoId = 'hZytp1sIZAw';
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -38,6 +40,9 @@ const HomePage = () => {
         <VideoPlayer videoId="PawTU9Dip2Q" />
         <VideoPlayer videoId="78lDIA-Rhbw" />
       </div>
+      <br />
+      <br />
+
     </div>
   );
 };

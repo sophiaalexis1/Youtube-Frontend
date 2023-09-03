@@ -3,3 +3,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap:20px;
 }
+
+.video-grid2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:20px;
+}
