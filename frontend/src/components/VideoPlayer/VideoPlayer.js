@@ -22,7 +22,7 @@ const VideoPlayer = ({ videoId }) => {
       });
 
       const snippet = response.data.items[0].snippet;
-      const description = truncateDescription(snippet.description, 10); // Limit to 25 words
+      const description = truncateDescription(snippet.description, 10); 
       setVideoDetails({
         title: snippet.title,
         description: description,
@@ -32,7 +32,6 @@ const VideoPlayer = ({ videoId }) => {
     }
   };
 
-  // Function to truncate description to a specified number of words
   const truncateDescription = (text, limit) => {
     const words = text.split(' ');
     if (words.length <= limit) {

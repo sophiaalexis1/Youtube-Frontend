@@ -5,6 +5,7 @@ import RelatedVideos from '../../components/RelatedVideos/RelatedVideos';
 import axios from 'axios';
 import './VideoDetailPage.css'
 import SearchPage from '../../components/SearchPage/SearchPage'
+import CommentForm from '../../components/CommentForm/CommentForm';
 
 const VideoDetailPage = () => {
   const { videoId } = useParams();
@@ -23,6 +24,7 @@ const VideoDetailPage = () => {
         <div className="video-player-container">
           <VideoPlayer videoId={videoId} />
         </div>
+        <CommentForm />
         <div className="related-videos-container">
           <RelatedVideos videoId={videoId} />
         </div>
