@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './VideoPlayer.css'
 import axios from 'axios';
 import { KEY } from '../../localKey';
 
@@ -44,8 +43,8 @@ const VideoPlayer = ({ videoId }) => {
   return (
     <div className="video-container">
       <iframe
-        width="560"
-        height="315"
+        width="1120"
+        height="630"
         src={embedUrl}
         title="YouTube Video"
         frameBorder="0"

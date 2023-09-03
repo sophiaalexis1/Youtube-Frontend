@@ -52,6 +52,7 @@ const CommentForm = ({ videoId }) => {
                     onChange={(e) => setComment(e.target.value)}
                     required
                 ></textarea>
+                <br />
                 <button type="submit">Submit</button>
                 {successMessage && <div className="success-message">{successMessage}</div>}
                 {errorMessage && <div className="error-message">{errorMessage}</div>}

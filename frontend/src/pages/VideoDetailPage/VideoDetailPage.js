@@ -6,6 +6,7 @@ import axios from 'axios';
 import './VideoDetailPage.css'
 import Comment from '../../components/Comment/Comment';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import VideoPlayer2 from '../../components/VideoPlayer2/VideoPlayer2';
 
 const VideoDetailPage = () => {
   const { videoId } = useParams();
@@ -22,9 +23,11 @@ const VideoDetailPage = () => {
       <br />
       <div className="video-related">
         <div className="video-player-container">
-          <VideoPlayer videoId={videoId} />
+          <VideoPlayer2 videoId={videoId} />
+          <br />
+          <br />
+          <Comment videoId={videoId} />
         </div>
-        <Comment videoId={videoId} />
         <div className="related-videos-container">
           <RelatedVideos videoId={videoId} />
         </div>
