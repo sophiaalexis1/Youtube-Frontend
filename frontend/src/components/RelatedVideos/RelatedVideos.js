@@ -17,7 +17,7 @@ function RelatedVideos({ videoId }) {
       const response = await axios.get(`${API_URL}search`, {
         params: {
           type: 'video',
-          relatedtoVideoId: videoId,
+          relatedToVideoId: videoId,
           key: API_KEY,
           part: 'snippet',
           maxResults: 5,
