@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {KEY} from '../../localKey'
+import { KEY } from '../../localKey';
 
-const API_KEY = KEY
+const API_KEY = KEY;
 const VideoPlayer = ({ videoId }) => {
   const embedUrl = `https://www.youtube.com/embed/${videoId}`;
   const [videoDetails, setVideoDetails] = useState({ title: '', description: '' });
@@ -22,12 +22,23 @@ const VideoPlayer = ({ videoId }) => {
       });
 
       const snippet = response.data.items[0].snippet;
+      const description = truncateDescription(snippet.description, 10); // Limit to 25 words
       setVideoDetails({
         title: snippet.title,
+        description: description,
       });
     } catch (error) {
       console.error(error);
     }
+  };
+
+  // Function to truncate description to a specified number of words
+  const truncateDescription = (text, limit) => {
+    const words = text.split(' ');
+    if (words.length <= limit) {
+      return text;
+    }
+    return words.slice(0, limit).join(' ') + '...';
   };
 
   return (

@@ -39,9 +39,11 @@ function SearchPage() {
     return (
         <div>
           <div>
+            <h1>Search For Videos</h1>
+            <br />
             <input
               type="text"
-              placeholder="Search for videos"
+              placeholder="Search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />

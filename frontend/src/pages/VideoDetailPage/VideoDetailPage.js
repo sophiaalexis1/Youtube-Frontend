@@ -4,6 +4,7 @@ import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import RelatedVideos from '../../components/RelatedVideos/RelatedVideos';
 import axios from 'axios';
 import './VideoDetailPage.css'
+import SearchPage from '../../components/SearchPage/SearchPage'
 
 const VideoDetailPage = () => {
   const { videoId } = useParams();
@@ -13,7 +14,8 @@ const VideoDetailPage = () => {
 
   return (
     <div className="container">
-      <h1>Video Player</h1>
+      <SearchPage />
+      <br />
       <p>Video ID: {videoId}</p>
       <br />
       <br />
