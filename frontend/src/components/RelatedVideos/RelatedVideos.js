@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { KEY } from '../../localKey.js'
+import './RelatedVideos.css'
 
 const API_KEY = KEY
 const API_URL = 'https://www.googleapis.com/youtube/v3/';
@@ -17,7 +18,7 @@ function RelatedVideos({ videoId }) {
       const response = await axios.get(`${API_URL}search`, {
         params: {
           type: 'video',
-          relatedToVideoId: videoId,
+          relatedtoVideoId: videoId,
           key: API_KEY,
           part: 'snippet',
           maxResults: 5,
@@ -32,7 +33,9 @@ function RelatedVideos({ videoId }) {
 
   return (
     <div>
+      <div className="center-container">
       <h2>Related Videos</h2>
+      </div>
       <div className="related-videos-container">
         {relatedVideos.map((video) => (
           <div key={video.id.videoId} className="related-video">
@@ -45,7 +48,7 @@ function RelatedVideos({ videoId }) {
                 src={video.snippet.thumbnails.medium.url}
                 alt={video.snippet.title}
               />
-              <p>{video.snippet.title}</p>
+              <p className="video-title">{video.snippet.title}</p>
             </a>
           </div>
         ))}

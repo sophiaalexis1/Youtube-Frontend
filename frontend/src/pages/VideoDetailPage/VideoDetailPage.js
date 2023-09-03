@@ -15,9 +15,15 @@ const VideoDetailPage = () => {
     <div className="container">
       <h1>Video Player</h1>
       <p>Video ID: {videoId}</p>
-      <div className='video-related'>
-        <VideoPlayer videoId={videoId} />
-        <RelatedVideos videoId={videoId} />
+      <br />
+      <br />
+      <div className="video-related">
+        <div className="video-player-container">
+          <VideoPlayer videoId={videoId} />
+        </div>
+        <div className="related-videos-container">
+          <RelatedVideos videoId={videoId} />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,14 @@
-.video-related{
+.video-related {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    align-items: flex-start; /* Adjust alignment as needed */
+  }
+  
+  .video-player-container {
+    width: 80%; /* Adjust the desired width */
+  }
+  
+  .related-videos-container {
+    width: 30%; /* Adjust the desired width */
+    padding-left: 10px; /* Add padding for separation */
+  }
+  
