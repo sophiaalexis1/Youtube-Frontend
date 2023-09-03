@@ -2,7 +2,17 @@
 .video-title {
     font-size: 14px; /* Adjust the desired font size */
     justify-content: center; /* Center vertically */
-    text-align: center; /* Center text horizontally */
+    text-align: left; /* Center text horizontally */
+    width: 100%;
   }
-  
+.related-videos-container {
+    justify-content: center; /* Center vertically */
+    text-align: left; /* Center text horizontally */
+  }
+
+h2{
+  display: flex;
+  justify-content: left; /* Center vertically */
+  text-align: left; /* Center text horizontally */
+}
     

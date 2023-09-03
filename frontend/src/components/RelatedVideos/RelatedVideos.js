@@ -47,7 +47,7 @@ function RelatedVideos({ videoId }) {
                 src={video.snippet.thumbnails.medium.url}
                 alt={video.snippet.title}
               />
-              <p className="video-title">{video.snippet.title}</p>
+              <p className="video-title" width="100%" >{video.snippet.title}</p>
             </a>
           </div>
         ))}
