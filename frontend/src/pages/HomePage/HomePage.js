@@ -3,8 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import axios from "axios";
-import SearchPage from "../../components/SearchPage/SearchPage";
-import RelatedVideos from "../../components/RelatedVideos/RelatedVideos.js"
+
 
 const HomePage = () => {
   const [user, token] = useAuth();
@@ -30,7 +29,6 @@ const HomePage = () => {
   return (
     <div className="container">
       <h1>Welcome {user.username}!</h1>
-      <SearchPage />
       <div className="video-grid">
         <Link to="/video/ModbgkYi9Fg">
           <VideoPlayer videoId="ModbgkYi9Fg" />

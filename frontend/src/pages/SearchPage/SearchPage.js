@@ -17,19 +17,18 @@ function SearchPage() {
         return;
       }
   
-
       axios.get(`${API_URL}search`, {
         params: {
           key: API_KEY,
           part: 'snippet',
           q: searchTerm,
-          maxResults: 5, 
+          maxResults: 6, // Display 6 videos
         },
       })
       .then(response => {
         const firstVideo = response.data.items[0];
         setVideos(response.data.items);
-        setSelectedVideo(firstVideo.id.videoId)
+        setSelectedVideo(firstVideo.id.videoId);
       })
       .catch(error => {
         console.error(error);
@@ -71,7 +70,7 @@ function SearchPage() {
             ))}
           </ul>
         </div>
-      );      
-  }
+    );      
+}
 
 export default SearchPage;
