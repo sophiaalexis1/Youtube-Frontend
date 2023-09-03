@@ -4,7 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import './CommentForm.css'
 
 
-const CommentForm = () => {
+const CommentForm = ({ videoId }) => {
     const [comment, setComment] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -14,7 +14,14 @@ const CommentForm = () => {
         e.preventDefault();
 
         try {
-            let response = await axios.post('http://127.0.0.1:8000/api/comments/', {
+            const newComment = {
+                video_id: videoId, 
+                text: comment,
+                likes: "10", 
+                dislikes: "0",
+            };
+            let response = await axios.post('http://127.0.0.1:8000/api/comments/', newComment,
+            {
                 headers: {
                     Authorization: "Bearer " + token,
                 } 

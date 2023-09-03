@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
+import './CommentList.css'
 
 const CommentList = ({ videoId }) => {
   const [comments, setComments] = useState([]);
@@ -25,9 +26,9 @@ const CommentList = ({ videoId }) => {
   return (
     <div className="comment-list">
       <h2>Comments</h2>
-      <ul>
+      <ul className="comment-items">
         {comments.map((comment) => (
-          <li key={comment.id}>
+          <li key={comment.id} className="comment-item">
             <strong>{comment.user.username}:</strong> {comment.text}
           </li>
         ))}

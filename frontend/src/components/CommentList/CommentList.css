@@ -1,0 +1,8 @@
+.comment-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-item {
+    margin-bottom: 10px;
+}
