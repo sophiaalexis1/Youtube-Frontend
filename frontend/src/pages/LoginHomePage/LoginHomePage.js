@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import axios from "axios";
 import SearchPage from "../../components/SearchPage/SearchPage";
+import "./LoginHomePage.css"
 import RelatedVideos from "../../components/RelatedVideos/RelatedVideos.js"
 
-const HomePage = () => {
+const LoginHomePage = () => {
   const [user, token] = useAuth();
   const [videos, setVideos] = useState([]);
   const selectedVideoId = 'hZytp1sIZAw';
@@ -14,7 +15,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/cars/all/", {
+        let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -58,4 +59,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default LoginHomePage;
