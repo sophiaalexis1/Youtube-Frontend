@@ -18,7 +18,7 @@ function SearchBar() {
           alert('Please enter a search term');
           return;
       }
-      navigate(`/video/${searchTerm}`);
+      navigate(`/video/results/${searchTerm}`);
 
       axios.get(`${API_URL}search`, {
           params: {
@@ -36,13 +36,7 @@ function SearchBar() {
       .catch(error => {
           console.error(error);
       });
-  }; 
-  useEffect(() => {
-    // This effect can be used for any cleanup if needed
-    return () => {
-        // Cleanup code here
-    };
-}, []);
+  };
 
     return (
         <div>

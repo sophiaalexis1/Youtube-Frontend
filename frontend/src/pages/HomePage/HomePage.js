@@ -10,22 +10,7 @@ const HomePage = () => {
   const [user, token] = useAuth();
   const [videos, setVideos] = useState([]);
   const selectedVideoId = 'hZytp1sIZAw';
-
-  useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        let response = await axios.get("http://127.0.0.1:8000/api/cars/all/");
-        setVideos(response.data);
-      } catch (error) {
-        console.log(error.response.data);
-      }
-    };
-    fetchVideos();
-  });
-
   const isLoggedIn = user != null && user != undefined
-
-
 
   return (
     <div className="container">
