@@ -3,6 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import axios from "axios";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 
 const HomePage = () => {
@@ -13,22 +14,31 @@ const HomePage = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/cars/all/", {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        });
+        let response = await axios.get("http://127.0.0.1:8000/api/cars/all/");
         setVideos(response.data);
       } catch (error) {
         console.log(error.response.data);
       }
     };
     fetchVideos();
-  }, [token]);
+  });
+
+  const isLoggedIn = user != null && user != undefined
+
+
 
   return (
     <div className="container">
-      <h1>Welcome {user.username}!</h1>
+      {isLoggedIn ? (
+        <h1>Welcome back {user.username}!</h1>
+      ) : (
+        <h1>Welcome!</h1>
+      )}
+      <br />
+      <br />
+        <SearchBar />
+      <br />
+      <br />
       <div className="video-grid">
         <Link to="/video/ModbgkYi9Fg">
           <VideoPlayer videoId="ModbgkYi9Fg" />

@@ -17,12 +17,11 @@ function RelatedVideos({ videoId }) {
     try {
       const response = await axios.get(`${API_URL}search`, {
         params: {
-          type: 'video',
-          relatedtoVideoId: videoId,
           key: API_KEY,
           part: 'snippet',
-          maxResults: 5,
-        },
+          q: 'zelda',
+          maxResults: 5, 
+      },
       });
 
       setRelatedVideos(response.data.items);

@@ -18,7 +18,7 @@ function SearchBar() {
           alert('Please enter a search term');
           return;
       }
-      navigate(`/search/${searchTerm}`);
+      navigate(`/video/${searchTerm}`);
 
       axios.get(`${API_URL}search`, {
           params: {

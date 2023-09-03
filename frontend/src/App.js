@@ -22,9 +22,9 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/all" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/" element={<PrivateRoute> <LoginHomePage />  </PrivateRoute>}/>
-        <Route path="/video/:videoId" element={<VideoDetailPage />} />
+        <Route path="video/:videoId" element={<VideoDetailPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
