@@ -1,18 +1,18 @@
-/* relatedVideos.css */
+
 .video-title {
-    font-size: 14px; /* Adjust the desired font size */
-    justify-content: center; /* Center vertically */
-    text-align: left; /* Center text horizontally */
+    font-size: 14px; 
+    justify-content: center; 
+    text-align: left; 
     width: 100%;
   }
 .related-videos-container {
-    justify-content: center; /* Center vertically */
-    text-align: left; /* Center text horizontally */
+    justify-content: center; 
+    text-align: left; 
   }
 
 h2{
   display: flex;
-  justify-content: left; /* Center vertically */
-  text-align: left; /* Center text horizontally */
+  justify-content: left; 
+  text-align: left; 
 }
     
